@@ -1,0 +1,61 @@
+<html>
+    <meta charset="UTF-8">
+    <h1>05-06 Práctica número secreto con arrays</h1> <! 05-05 número secreto arrays>
+    <h3>----------------------------------------------------------------</h3>
+    <br>
+    <br>
+    <br>
+    <canvas width="800" height="400"></canvas>
+
+    <script>
+
+        function cuadro(coord1x,coord2x,color_1,color_2){
+
+            pincel.fillStyle = color_1;
+            pincel.strokeStyle = color_2;
+            pincel.fillRect(coord1x,coord2x,50,50);    
+            pincel.strokeRect(coord1x,coord2x,50,50);
+        }
+        alert("Impresión de matriz de colores. ACEPTA para continuar.");
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+        var numeroFila = parseInt(prompt("Cuantas filas quieres? (máximo 16)","4"));
+        if(numeroFila <= 16){
+            var numeroColumna = parseInt(prompt("Cuantas columnas quieres? (máximo 8)","4"));
+
+            if(numeroColumna <= 8){
+                var color1 = prompt("color relleno? (color en inglés)","orange");
+                var color2 = prompt("color bordes? (color en inglés)","yellow");
+
+
+                for(var coordenada = 0; coordenada < numeroFila * 50; coordenada = coordenada + 50){
+
+                    for(var coord2 = 0; coord2 < numeroColumna * 50; coord2 = coord2 + 50){
+                        cuadro(coordenada,coord2,color1,color2);
+                    }
+                }
+            }
+            else{
+                document.write("<h1>ERROR!!! El rango columnas debe ser entre 1 y 8</h1>"); 
+            }
+
+        }
+        else{
+            document.write("<h1>ERROR!!! El rango de filas debe ser entre 1 y 16</h1>");
+        }   
+    </script>
+    <h3>FIN DE PROGRAMA</h3>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="text-align: center;">
+        <h4>Práctica por Raúl Trueba Mejía - G4 2022 CDMX</h4>
+        <a href="https://www.linkedin.com/in/deepfx/"><img src="linkedin.png" alt="Contacto Raúl Trueba"></a>
+        <a><img src="one.png" alt="Contacto Raúl Trueba" width="36" height="36"></a>
+        <a><img src="logoalura.svg" alt="Contacto Raúl Trueba" width="32" height="32"></a>       
+    </div>
+</html>
